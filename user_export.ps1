@@ -1,0 +1,1 @@
+﻿Get-Mailbox -ResultSize Unlimited | Select-Object DisplayName, SamAccountName, PrimarySmtpAddress, @{N="EmailAddresses";E={($_.EmailAddresses | Where-Object {$_ -like "smtp:*"}) -join ";"}} | Export-Csv -Path "C:\exchange_users.csv" -NoTypeInformation -Encoding UTF8

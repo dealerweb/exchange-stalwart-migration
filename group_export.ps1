@@ -1,0 +1,1 @@
+﻿Get-DistributionGroup -ResultSize Unlimited | Select-Object DisplayName, PrimarySmtpAddress, @{N="Members";E={(Get-DistributionGroupMember $_.Identity | Select-Object -ExpandProperty PrimarySmtpAddress) -join ";"}} | Export-Csv -Path "C:\exchange_groups.csv" -NoTypeInformation -Encoding UTF8

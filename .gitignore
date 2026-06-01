@@ -1,0 +1,17 @@
+# Runtime artifacts (may contain real user data - never commit)
+*.csv
+*.db
+*.db-wal
+*.db-shm
+migration_cache_*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+*.swp
